@@ -25,10 +25,7 @@
       max-width: 200px;
       width: 100%;
       height: auto;
-
-      max-width: 180px;
       margin-bottom: 20px;
-      
     }
 
     h1 {
@@ -56,24 +53,49 @@
       color: #555;
     }
 
-    .link-button {
-      display: block;
-      background-color: #000;
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      
+    /* Row containing main button and copy button */
+    .link-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
       margin-bottom: 14px;
+    }
+
+    .link-button, .info-button {
+      flex: 1 1 auto;
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 12px;
       font-weight: 600;
       text-align: center;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
-    .link-button:hover {
+    .link-button:hover, .info-button:hover {
       background-color: #444;
       transform: translateY(-2px);
     }
 
+    .copy-btn {
+      flex: 0 0 48px;
+      background: #d4d4d4;
+      border: none;
+      border-radius: 12px;
+      font-size: 20px;
+      cursor: pointer;
+      transition: background 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .copy-btn:hover {
+      background: #b0b0b0;
+    }
+
+    /* Dark mode */
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #121212;
@@ -85,13 +107,21 @@
         color: #bbb;
       }
 
-      .link-button {
+      .link-button, .info-button {
         background-color: #1f1f1f;
-        color: white;
       }
 
-      .link-button:hover {
+      .link-button:hover, .info-button:hover {
         background-color: #333;
+      }
+
+      .copy-btn {
+        background: #333;
+        color: #fff;
+      }
+
+      .copy-btn:hover {
+        background: #444;
       }
     }
   </style>
@@ -102,17 +132,97 @@
     <h1>Invictus</h1>
     <p class="subtitle">Links úteis para a equipe</p>
 
+    <!-- Financeiro -->
     <div class="section">
       <div class="section-title">Financeiro</div>
-      <a href="https://www.pickmoney.com.br/2-via-boleto/" class="link-button">💰 2ª Via de Boletos - Pick Money</a>
-      <a href="https://www.momentum.com.br/area-do-proprietario" class="link-button">🏠 Área do Proprietário - Momentum</a>
+
+      <div class="link-row">
+        <a href="https://www.pickmoney.com.br/2-via-boleto/" class="link-button">💰 2ª Via de Boletos - Pick Money</a>
+        <button class="copy-btn" onclick="copyText('https://www.pickmoney.com.br/2-via-boleto/')">📋</button>
+      </div>
+
+      <div class="link-row">
+        <a href="https://www.momentum.com.br/area-do-proprietario" class="link-button">🏠 Área do Proprietário - Momentum</a>
+        <button class="copy-btn" onclick="copyText('https://www.momentum.com.br/area-do-proprietario')">📋</button>
+      </div>
     </div>
 
+    <!-- Escalas -->
     <div class="section">
       <div class="section-title">Escalas</div>
-      <a href="https://docs.google.com/spreadsheets/d/1bBv7d_bcdR6iqkKA8yNeJS3v274MkXTFBEXAgBqg3r4/edit?usp=sharing" class="link-button">📱 Escala Celulares</a>
-      <a href="https://docs.google.com/spreadsheets/d/1mZc6zU3vyGDKDv-Oqr42xGSS8SNtsBU4YSumDSjQgy0/edit?usp=sharing" class="link-button">🚪 Escala Portaria</a>
+
+      <div class="link-row">
+        <a href="https://docs.google.com/spreadsheets/d/1bBv7d_bcdR6iqkKA8yNeJS3v274MkXTFBEXAgBqg3r4/edit?usp=sharing" class="link-button">📱 Escala Celulares</a>
+        <button class="copy-btn" onclick="copyText('https://docs.google.com/spreadsheets/d/1bBv7d_bcdR6iqkKA8yNeJS3v274MkXTFBEXAgBqg3r4/edit?usp=sharing')">📋</button>
+      </div>
+
+      <div class="link-row">
+        <a href="https://docs.google.com/spreadsheets/d/1mZc6zU3vyGDKDv-Oqr42xGSS8SNtsBU4YSumDSjQgy0/edit?usp=sharing" class="link-button">🚪 Escala Portaria</a>
+        <button class="copy-btn" onclick="copyText('https://docs.google.com/spreadsheets/d/1mZc6zU3vyGDKDv-Oqr42xGSS8SNtsBU4YSumDSjQgy0/edit?usp=sharing')">📋</button>
+      </div>
+    </div>
+
+    <!-- SAC -->
+    <div class="section">
+      <div class="section-title">SAC</div>
+
+      <!-- Pick Money SAC -->
+      <div class="link-row">
+        <span class="info-button">📞 Tel/WhatsApp: (11) 4040-2595</span>
+        <button class="copy-btn" onclick="copyText('(11) 4040 2595')">📋</button>
+      </div>
+      <div class="link-row">
+        <span class="info-button">📧 sac@pickmoney.com.br</span>
+        <button class="copy-btn" onclick="copyText('sac@pickmoney.com.br')">📋</button>
+      </div>
+      <div class="link-row">
+        <span class="info-button">⏰ Seg–Sex 08:30–17:30</span>
+        <button class="copy-btn" onclick="copyText('Seg–Sex 08:30–17:30')">📋</button>
+      </div>
+
+      <!-- Riviera 13 SAC -->
+      <div class="link-row">
+        <span class="info-button">📞 Tel: (14) 3769-9100</span>
+        <button class="copy-btn" onclick="copyText('(14) 3769-9100')">📋</button>
+      </div>
+      <div class="link-row">
+        <span class="info-button">💬 WhatsApp: (14) 9 8829-5439</span>
+        <button class="copy-btn" onclick="copyText('(14) 9 8829-5439')">📋</button>
+      </div>
+      <div class="link-row">
+        <span class="info-button">📧 sac@rivieradesantacristina-13.com.br</span>
+        <button class="copy-btn" onclick="copyText('sac@rivieradesantacristina-13.com.br')">📋</button>
+      </div>
+      <div class="link-row">
+        <span class="info-button">⏰ Todos os dias 09:00–18:00</span>
+        <button class="copy-btn" onclick="copyText('Todos os dias 09:00–18:00')">📋</button>
+      </div>
     </div>
   </div>
+
+  <script>
+    function copyText(text) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(function() {
+          alert('Copiado: ' + text);
+        }, function(err) {
+          console.error('Erro ao copiar', err);
+        });
+      } else {
+        // Fallback para navegadores antigos
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          alert('Copiado: ' + text);
+        } catch (err) {
+          console.error('Erro ao copiar', err);
+        }
+        document.body.removeChild(textarea);
+      }
+    }
+  </script>
 </body>
 </html>
