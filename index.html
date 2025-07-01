@@ -35,7 +35,25 @@
 
     p.subtitle {
       color: #777;
+      margin-bottom: 16px;
+    }
+
+    .exchange-rates {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
       margin-bottom: 32px;
+    }
+
+    .exchange-box {
+      background: #000;
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      min-width: 100px;
+      text-align: center;
     }
 
     .section {
@@ -53,7 +71,6 @@
       color: #555;
     }
 
-    /* Row containing main button and copy button */
     .link-row {
       display: flex;
       align-items: center;
@@ -95,11 +112,15 @@
       background: #b0b0b0;
     }
 
-    /* Dark mode */
     @media (prefers-color-scheme: dark) {
       body {
         background-color: #121212;
         color: #f0f0f0;
+      }
+
+      .exchange-box {
+        background: #1f1f1f;
+        color: #fff;
       }
 
       .section-title {
@@ -131,97 +152,27 @@
     <img src="logo_invictus_riviera.jpeg" alt="Logo Invictus" class="logo">
     <h1>Invictus</h1>
     <p class="subtitle">Links úteis para a equipe</p>
-
-    <!-- Financeiro -->
-    <div class="section">
-      <div class="section-title">Financeiro</div>
-
-      <div class="link-row">
-        <a href="https://www.pickmoney.com.br/2-via-boleto/" class="link-button">💰 2ª Via de Boletos - Pick Money</a>
-        <button class="copy-btn" onclick="copyText('https://www.pickmoney.com.br/2-via-boleto/')">📋</button>
-      </div>
-
-      <div class="link-row">
-        <a href="https://www.momentum.com.br/area-do-proprietario" class="link-button">🏠 Área do Proprietário - Momentum</a>
-        <button class="copy-btn" onclick="copyText('https://www.momentum.com.br/area-do-proprietario')">📋</button>
-      </div>
-    </div>
-
-    <!-- Escalas -->
-    <div class="section">
-      <div class="section-title">Escalas</div>
-
-      <div class="link-row">
-        <a href="https://docs.google.com/spreadsheets/d/1bBv7d_bcdR6iqkKA8yNeJS3v274MkXTFBEXAgBqg3r4/edit?usp=sharing" class="link-button">📱 Escala Celulares</a>
-        <button class="copy-btn" onclick="copyText('https://docs.google.com/spreadsheets/d/1bBv7d_bcdR6iqkKA8yNeJS3v274MkXTFBEXAgBqg3r4/edit?usp=sharing')">📋</button>
-      </div>
-
-      <div class="link-row">
-        <a href="https://docs.google.com/spreadsheets/d/1mZc6zU3vyGDKDv-Oqr42xGSS8SNtsBU4YSumDSjQgy0/edit?usp=sharing" class="link-button">🚪 Escala Portaria</a>
-        <button class="copy-btn" onclick="copyText('https://docs.google.com/spreadsheets/d/1mZc6zU3vyGDKDv-Oqr42xGSS8SNtsBU4YSumDSjQgy0/edit?usp=sharing')">📋</button>
-      </div>
-    </div>
-
-    <!-- SAC -->
-    <div class="section">
-      <div class="section-title">SAC</div>
-
-      <!-- Pick Money SAC -->
-      <div class="link-row">
-        <span class="info-button">📞 Tel/WhatsApp: (11) 4040-2595</span>
-        <button class="copy-btn" onclick="copyText('(11) 4040 2595')">📋</button>
-      </div>
-      <div class="link-row">
-        <span class="info-button">📧 sac@pickmoney.com.br</span>
-        <button class="copy-btn" onclick="copyText('sac@pickmoney.com.br')">📋</button>
-      </div>
-      <div class="link-row">
-        <span class="info-button">⏰ Seg–Sex 08:30–17:30</span>
-        <button class="copy-btn" onclick="copyText('Seg–Sex 08:30–17:30')">📋</button>
-      </div>
-
-      <!-- Riviera 13 SAC -->
-      <div class="link-row">
-        <span class="info-button">📞 Tel: (14) 3769-9100</span>
-        <button class="copy-btn" onclick="copyText('(14) 3769-9100')">📋</button>
-      </div>
-      <div class="link-row">
-        <span class="info-button">💬 WhatsApp: (14) 9 8829-5439</span>
-        <button class="copy-btn" onclick="copyText('(14) 9 8829-5439')">📋</button>
-      </div>
-      <div class="link-row">
-        <span class="info-button">📧 sac@rivieradesantacristina-13.com.br</span>
-        <button class="copy-btn" onclick="copyText('sac@rivieradesantacristina-13.com.br')">📋</button>
-      </div>
-      <div class="link-row">
-        <span class="info-button">⏰ Todos os dias 09:00–18:00</span>
-        <button class="copy-btn" onclick="copyText('Todos os dias 09:00–18:00')">📋</button>
-      </div>
+    <div class="exchange-rates">
+      <div class="exchange-box">💵 Dólar: R$ 5,42</div>
+      <div class="exchange-box">💶 Euro: R$ 5,87</div>
+      <div class="exchange-box">💷 Libra: R$ 6,81</div>
     </div>
   </div>
+    <div class="save-shortcut" style="text-align:center; margin-top: 40px;">
+      <button onclick="alertInstructions()" class="link-button" style="width: 100%;">📲 Salvar na Tela Inicial</button>
+    </div>
 
   <script>
     function copyText(text) {
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(text).then(function() {
-          alert('Copiado: ' + text);
-        }, function(err) {
-          console.error('Erro ao copiar', err);
-        });
-      } else {
-        // Fallback para navegadores antigos
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        try {
-          document.execCommand('copy');
-          alert('Copiado: ' + text);
-        } catch (err) {
-          console.error('Erro ao copiar', err);
-        }
-        document.body.removeChild(textarea);
-      }
+      navigator.clipboard.writeText(text).then(function () {
+        alert('Copiado: ' + text);
+      });
+    }
+  
+    function alertInstructions() {
+      alert("Para salvar esta página como um app:
+
+No iPhone (Safari): toque em 'Compartilhar' e selecione 'Adicionar à Tela de Início'.\n\nNo Android (Chrome): toque no menu (⋮) e selecione 'Adicionar à tela inicial'.");
     }
   </script>
 </body>
