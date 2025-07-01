@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Links úteis - Gui Faria</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      color: #333;
+      padding: 40px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 480px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: #777;
+      margin-bottom: 32px;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 4px;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .link-button {
+      display: block;
+      background-color: #000;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      font-weight: 600;
+      text-align: center;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .link-button:hover {
+      background-color: #444;
+      transform: translateY(-2px);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #121212;
+        color: #f0f0f0;
+      }
+
+      .section-title {
+        border-color: #333;
+        color: #bbb;
+      }
+
+      .link-button {
+        background-color: #1f1f1f;
+        color: white;
+      }
+
+      .link-button:hover {
+        background-color: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Gui Faria</h1>
+    <p class="subtitle">Links úteis para a equipe</p>
+
+    <div class="section">
+      <div class="section-title">Documentos</div>
+      <a href="https://exemplo.com/doc1" class="link-button">📄 Documento do Projeto</a>
+      <a href="https://exemplo.com/politicas" class="link-button">📚 Políticas da Empresa</a>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Acesso Rápido</div>
+      <a href="https://exemplo.com/drive" class="link-button">📁 Pasta no Google Drive</a>
+      <a href="https://exemplo.com/reuniao" class="link-button">📅 Agendar Reunião</a>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Suporte</div>
+      <a href="https://exemplo.com/form" class="link-button">🛠️ Formulário de Suporte</a>
+      <a href="mailto:suporte@exemplo.com" class="link-button">📧 Enviar e-mail para o Suporte</a>
+    </div>
+  </div>
+</body>
+</html>
