@@ -221,6 +221,37 @@ t-BR">
 </div>
 
 
+    
+<div class="section">
+  <div class="section-title">Dados para Depósito - MOMENTUM</div>
+  <div class="text-block">
+    <p><strong>Momentum Empreendimentos Imobiliários LTDA</strong></p>
+    <p>
+      <button class="link-button small" onclick="copyText('47.686.555/0001-00')">📋 Copiar CNPJ</button>
+    </p>
+    <p><strong>Contas Bancárias:</strong></p>
+    <table style="width: 100%; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th style="text-align: left; padding: 6px;">Banco</th>
+          <th style="text-align: left; padding: 6px;">Agência</th>
+          <th style="text-align: left; padding: 6px;">Conta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 6px;">Bradesco</td><td style="padding: 6px;">3395-2</td><td style="padding: 6px;">37.629-9</td></tr>
+        <tr><td style="padding: 6px;">Itaú</td><td style="padding: 6px;">0262-0</td><td style="padding: 6px;">62.222-8</td></tr>
+        <tr><td style="padding: 6px;">Banco do Brasil</td><td style="padding: 6px;">2155-5</td><td style="padding: 6px;">9.868-X</td></tr>
+        <tr><td style="padding: 6px;">Santander</td><td style="padding: 6px;">2146</td><td style="padding: 6px;">13.000.008-3</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top: 10px;">
+      <a href="dados-bancarios-momentum.jpeg" class="link-button small" target="_blank" rel="noopener">📎 Ver imagem com os dados</a>
+    </p>
+  </div>
+</div>
+
+
     <div class="section-title">Financeiro</div>
       <div class="link-row">
         <a href="https://www.pickmoney.com.br/2-via-boleto/" class="link-button">💰 2ª Via de Boletos - Pick Money</a>
@@ -417,6 +448,15 @@ t-BR">
 
     fetchHeadlines();
   </script>
+
+<script>
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert("Texto copiado: " + text);
+    });
+  }
+</script>
+
 
 <script>
   function copyText(text) {
