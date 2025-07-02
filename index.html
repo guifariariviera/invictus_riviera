@@ -149,24 +149,7 @@ t-BR">
         background: #444;
       }
     }
-  
-    .news-item {
-      font-size: 14px;
-      font-weight: normal;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
-      color: #222;
-      text-decoration: none;
-      width: 100%;
-      padding: 4px 0;
-    }
-    .news-item:hover {
-      text-decoration: underline;
-    }
-
-</style>
+  </style>
 </head>
 <body>
   <div class="container">
@@ -197,24 +180,7 @@ t-BR">
         90% { opacity: 1; }
         100% { transform: translateY(-100%); opacity: 0; }
       }
-    
-    .news-item {
-      font-size: 14px;
-      font-weight: normal;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
-      color: #222;
-      text-decoration: none;
-      width: 100%;
-      padding: 4px 0;
-    }
-    .news-item:hover {
-      text-decoration: underline;
-    }
-
-</style>
+    </style>
 
     
     <div class="section">
@@ -239,7 +205,23 @@ t-BR">
 
 
     <div class="section">
-      <div class="section-title">Financeiro</div>
+      
+<div class="section">
+  <div class="section-title">Dados para Depósito - MOMENTUM</div>
+  <div class="text-block">
+    <p><strong>Momentum Empreendimentos Imobiliários LTDA</strong></p>
+    <p>CNPJ: <span class="copyable" onclick="copyText('47.686.555/0001-00')">47.686.555/0001-00 📋</span></p>
+    <p><strong>Banco | Agência | Conta</strong></p>
+    <p>Bradesco | 3395-2 | 37.629-9</p>
+    <p>Itaú | 0262-0 | 62.222-8</p>
+    <p>Banco do Brasil | 2155-5 | 9.868-X</p>
+    <p>Santander | 2146 | 13.000.008-3</p>
+  </div>
+  <img src="dados-bancarios-momentum.jpeg" alt="Dados Bancários Momentum" style="margin-top:10px; max-width: 100%; border-radius: 12px;">
+</div>
+
+
+    <div class="section-title">Financeiro</div>
       <div class="link-row">
         <a href="https://www.pickmoney.com.br/2-via-boleto/" class="link-button">💰 2ª Via de Boletos - Pick Money</a>
         <button class="copy-btn" onclick="copyText('https://www.pickmoney.com.br/2-via-boleto/')">📋</button>
@@ -267,24 +249,7 @@ t-BR">
         90% { opacity: 1; }
         100% { transform: translateY(-100%); opacity: 0; }
       }
-    
-    .news-item {
-      font-size: 14px;
-      font-weight: normal;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
-      color: #222;
-      text-decoration: none;
-      width: 100%;
-      padding: 4px 0;
-    }
-    .news-item:hover {
-      text-decoration: underline;
-    }
-
-</style>
+    </style>
 
     <div class="section">
       <div class="section-title">Escalas</div>
@@ -315,24 +280,7 @@ t-BR">
         90% { opacity: 1; }
         100% { transform: translateY(-100%); opacity: 0; }
       }
-    
-    .news-item {
-      font-size: 14px;
-      font-weight: normal;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
-      color: #222;
-      text-decoration: none;
-      width: 100%;
-      padding: 4px 0;
-    }
-    .news-item:hover {
-      text-decoration: underline;
-    }
-
-</style>
+    </style>
 
     <div class="section">
       <div class="section-title">SAC - Pick Money (Boleto do Terreno)
@@ -369,24 +317,7 @@ t-BR">
         90% { opacity: 1; }
         100% { transform: translateY(-100%); opacity: 0; }
       }
-    
-    .news-item {
-      font-size: 14px;
-      font-weight: normal;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
-      color: #222;
-      text-decoration: none;
-      width: 100%;
-      padding: 4px 0;
-    }
-    .news-item:hover {
-      text-decoration: underline;
-    }
-
-</style>
+    </style>
 
     <div class="section">
       <div class="section-title">SAC - Riviera de Santa Cristina XIII (Taxas)
@@ -427,24 +358,7 @@ t-BR">
         90% { opacity: 1; }
         100% { transform: translateY(-100%); opacity: 0; }
       }
-    
-    .news-item {
-      font-size: 14px;
-      font-weight: normal;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      display: block;
-      color: #222;
-      text-decoration: none;
-      width: 100%;
-      padding: 4px 0;
-    }
-    .news-item:hover {
-      text-decoration: underline;
-    }
-
-</style>
+    </style>
 
     
 
@@ -453,49 +367,63 @@ t-BR">
     </div>
   </div>
 
+  <script>
+    function copyText(text) {
+      navigator.clipboard.writeText(text).then(function () {
+        alert('Copiado: ' + text);
+      });
+    }
+
+    function alertInstructions() {
+      alert("Para salvar esta página como um app:\n\nNo iPhone (Safari): toque em 'Compartilhar' e selecione 'Adicionar à Tela de Início'.\n\nNo Android (Chrome): toque no menu (⋮) e selecione 'Adicionar à tela inicial'.");
+    }
   
+    const feeds = [
+      'https://api.rss2json.com/v1/api.json?rss_url=https://revistaoeste.com/feed/',
+      'https://api.rss2json.com/v1/api.json?rss_url=https://www.gazetadopovo.com.br/rss/'
+    ];
+
+    let currentFeed = 0;
+    let headlines = [];
+    let currentHeadline = 0;
+
+    async function fetchHeadlines() {
+      try {
+        const res = await fetch(feeds[currentFeed]);
+        const data = await res.json();
+        headlines = data.items.map(item => `📰 ${item.title}`);
+        currentFeed = (currentFeed + 1) % feeds.length;
+        currentHeadline = 0;
+        showNextHeadline();
+      } catch {
+        document.getElementById("rss-content").innerText = "Erro ao carregar notícias.";
+      }
+    }
+
+    function showNextHeadline() {
+      const container = document.getElementById("rss-content");
+      container.style.animation = "none";
+      void container.offsetWidth; // trigger reflow
+      container.innerText = headlines[currentHeadline];
+      container.style.animation = "slide-up 1s ease";
+
+      currentHeadline++;
+      if (currentHeadline >= headlines.length) {
+        fetchHeadlines();
+      } else {
+        setTimeout(showNextHeadline, 6000);
+      }
+    }
+
+    fetchHeadlines();
+  </script>
 
 <script>
-  const feeds = [
-    'https://api.rss2json.com/v1/api.json?rss_url=https://revistaoeste.com/feed/',
-    'https://api.rss2json.com/v1/api.json?rss_url=https://www.gazetadopovo.com.br/rss/'
-  ];
-
-  let currentFeed = 0;
-  let headlines = [];
-  let currentHeadline = 0;
-
-  async function fetchHeadlines() {
-    try {
-      const res = await fetch(feeds[currentFeed]);
-      const data = await res.json();
-      headlines = data.items.map(item => ({ title: item.title, link: item.link }));
-      currentFeed = (currentFeed + 1) % feeds.length;
-      currentHeadline = 0;
-      showNextHeadline();
-    } catch (e) {
-      const el = document.getElementById("rss-content");
-      if (el) el.innerText = "Erro ao carregar notícias.";
-    }
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(function() {
+      alert("Texto copiado: " + text);
+    });
   }
-
-  function showNextHeadline() {
-    const container = document.getElementById("rss-content");
-    if (!container || headlines.length === 0) return;
-
-    const item = headlines[currentHeadline];
-    container.innerText = "📰 " + item.title;
-    container.href = item.link;
-
-    currentHeadline++;
-    if (currentHeadline >= headlines.length) {
-      fetchHeadlines();
-    } else {
-      setTimeout(showNextHeadline, 7000);
-    }
-  }
-
-  fetchHeadlines();
 </script>
 
 </body>
