@@ -160,8 +160,8 @@ t-BR">
       color: #222;
       text-decoration: none;
       width: 100%;
+      padding: 4px 0;
     }
-
     .news-item:hover {
       text-decoration: underline;
     }
@@ -208,8 +208,8 @@ t-BR">
       color: #222;
       text-decoration: none;
       width: 100%;
+      padding: 4px 0;
     }
-
     .news-item:hover {
       text-decoration: underline;
     }
@@ -278,8 +278,8 @@ t-BR">
       color: #222;
       text-decoration: none;
       width: 100%;
+      padding: 4px 0;
     }
-
     .news-item:hover {
       text-decoration: underline;
     }
@@ -326,8 +326,8 @@ t-BR">
       color: #222;
       text-decoration: none;
       width: 100%;
+      padding: 4px 0;
     }
-
     .news-item:hover {
       text-decoration: underline;
     }
@@ -380,8 +380,8 @@ t-BR">
       color: #222;
       text-decoration: none;
       width: 100%;
+      padding: 4px 0;
     }
-
     .news-item:hover {
       text-decoration: underline;
     }
@@ -438,8 +438,8 @@ t-BR">
       color: #222;
       text-decoration: none;
       width: 100%;
+      padding: 4px 0;
     }
-
     .news-item:hover {
       text-decoration: underline;
     }
@@ -454,31 +454,6 @@ t-BR">
   </div>
 
   
-
-<script>
-  const sheetURL = 'https://docs.google.com/spreadsheets/d/1YA5eRHeUeidfYkcqcFfmVre8QTW4pSFoZDQAhwxyo24/gviz/tq?tqx=out:json&sheet=Página1';
-
-  fetch(sheetURL)
-    .then(res => res.text())
-    .then(text => {
-      const json = JSON.parse(text.substring(47).slice(0, -2));
-      const rows = json.table.rows;
-
-      const mes = rows[1].c[2]?.v || "Mês";
-      const atual = parseFloat(rows[2].c[1]?.v || "0");
-      const meta = parseFloat(rows[2].c[2]?.v || "0");
-
-      const perc = meta > 0 ? Math.round((atual / meta) * 100) : 0;
-
-      document.getElementById("meta-label").innerText = `${mes} – ${perc}% da meta (${atual.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})} de ${meta.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})})`;
-      document.getElementById("meta-progress").style.width = perc + "%";
-      document.getElementById("meta-progress").innerText = perc + "%";
-    })
-    .catch(() => {
-      document.getElementById("meta-label").innerText = "Erro ao carregar meta.";
-    });
-</script>
-
 
 <script>
   const feeds = [
@@ -498,22 +473,25 @@ t-BR">
       currentFeed = (currentFeed + 1) % feeds.length;
       currentHeadline = 0;
       showNextHeadline();
-    } catch {
-      document.getElementById("rss-content").innerText = "Erro ao carregar notícias.";
+    } catch (e) {
+      const el = document.getElementById("rss-content");
+      if (el) el.innerText = "Erro ao carregar notícias.";
     }
   }
 
   function showNextHeadline() {
     const container = document.getElementById("rss-content");
+    if (!container || headlines.length === 0) return;
+
     const item = headlines[currentHeadline];
-    container.innerText = '📰 ' + item.title;
+    container.innerText = "📰 " + item.title;
     container.href = item.link;
 
     currentHeadline++;
     if (currentHeadline >= headlines.length) {
       fetchHeadlines();
     } else {
-      setTimeout(showNextHeadline, 6000);
+      setTimeout(showNextHeadline, 7000);
     }
   }
 
